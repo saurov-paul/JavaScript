@@ -3,10 +3,10 @@ Refine the getLastCharacter function so that it returns the last character from 
  */
 
 function getLastCharacter(name) {
-    return name[]
+  return name.slice(-1);
 }
 
 // Sample usage - do not modify
-console.log(getLastCharacter('Sam')); // "m"
-console.log(getLastCharacter('Alex')); // "x"
-console.log(getLastCharacter('Charley')); // "y"
+console.log(getLastCharacter("Sam")); // "m"
+console.log(getLastCharacter("Alex")); // "x"
+console.log(getLastCharacter("Charley")); // "y"
