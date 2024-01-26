@@ -7,7 +7,11 @@ Develop a function called greaterNum which:
  */
 // let greaterNum = (x, y);
 function greaterNum(x, y) {
-  return max(greaterNum);
+  if (x > y) {
+    return x;
+  } else {
+    return y;
+  }
 }
 
 // Sample usage - do not modify

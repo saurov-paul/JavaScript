@@ -5,6 +5,9 @@ Refine the capitalize function to ensure it capitalizes the first letter of the 
 function capitalize(word) {
   return word.toUpperCase(1);
 }
+function capitalize(word) {
+  return word(0).toUpperCase + word.slice(1).toLowerCase();
+}
 
 // Sample usage - do not modify
 console.log(capitalize("sam")); // "Sam"
