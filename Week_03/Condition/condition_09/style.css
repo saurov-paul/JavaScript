@@ -1,0 +1,22 @@
+body{
+    background-color: black;
+    color: white;
+    
+}
+.title h1,p{
+    display: inline-block;
+    font-size: 4rem;
+    
+}
+
+.title p{
+    color:#7fff00 ;
+   
+}
+
+button{
+    height: 7cqb;
+    width: 120px;
+    background-color: orange;
+    align-items: center;
+}
