@@ -1,19 +1,18 @@
-const form = document.querySelector(".form-container");
+const form = document.querySelector("form-container");
 
 const priceCal = () => {
-  const typeselecrt = document.querySelector("#type");
+  const typeSelect = document.querySelector("#type");
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-  const priceBanner = document.querySelector("#price-banner");
+  const priceBanner = document.querySelector(".price-banner");
 
-  let totalAmount = parseInt(typeselecrt.value);
+  const totalPrice = parseInt(typeSelect.value);
 
-  for (const checkbox of checkboxes) {
+  checkboxes.forEach((checkbox) => {
     if (checkbox.checked) {
-      totalAmount += parseInt(checkbox.value);
+      totalPrice = totalPrice + parseInt(checkboxes.value);
     }
-  }
-
-  priceBanner.textContent = `$${totalAmount}`;
+  });
+  priceBanner.textContent = `$${totalPrice}`;
 };
 
 form.addEventListener("change", priceCal);
