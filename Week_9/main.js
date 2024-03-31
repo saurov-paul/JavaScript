@@ -1,7 +1,7 @@
 let pokemons = [];
 
 const fetchData = () => {
-  fetch("https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0")
+  fetch("https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0")
     .then((response) => response.json())
     .then((json) => {
       const fetches = json.results.map((item) => {
@@ -33,9 +33,8 @@ const displayData = (data) => {
     const isFavorite = localStorage.getItem(pokemon.name) === "true";
     const favoriteText = isFavorite ? "Unmark favorite" : "Mark favorite";
 
-    pokemonCard.innerHTML = `
+    pokemonCard.innerHTML = `<h2>${pokemon.name}</h2>
     <img src="${imageUrl}"/>
-    <h2>${pokemon.name}</h2>
     <div class="card">
       <p>Weight: ${pokemon.weight / 10} kg</p>
       <p>Height: ${pokemon.height / 10} m</p>
@@ -49,13 +48,12 @@ const displayData = (data) => {
 
 const toggleFavorite = (e) => {
   const pokemonName = e.target.getAttribute("data-name");
-  const isFavorite = localStorage.getItem(pokemonName) === "true";
-  localStorage.setItem(pokemonName, !isFavorite);
-  displayData(pokemons);
+  console.log(pokemonName);
 };
 
 const addFavorites = () => {
-  document.querySelectorAll("#favButton")
+  document
+    .querySelectorAll("#favButton")
     .forEach((button) => button.addEventListener("click", toggleFavorite));
 };
 
